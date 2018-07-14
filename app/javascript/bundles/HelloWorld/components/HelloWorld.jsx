@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { connect } from 'react-redux'
 
-export default class HelloWorld extends React.Component {
+class HelloWorld extends React.Component {
   static propTypes = {
     name: PropTypes.string.isRequired, // this is passed from the Rails view
   };
@@ -39,7 +40,14 @@ export default class HelloWorld extends React.Component {
             onChange={(e) => this.updateName(e.target.value)}
           />
         </form>
+        <h3>NUMBERS: {JSON.stringify(this.props.numbers)}</h3>
       </div>
     );
   }
 }
+
+const mapStateToProps = state => ({
+  numbers: state.numbers
+})
+
+export default connect(mapStateToProps)(HelloWorld)

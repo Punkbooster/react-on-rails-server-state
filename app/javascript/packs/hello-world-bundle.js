@@ -1,8 +1,11 @@
-import ReactOnRails from 'react-on-rails';
+import ReactOnRails from 'react-on-rails'
+import createStore from '../bundles/HelloWorld/createStore'
+import App from '../bundles/HelloWorld/components/App'
 
-import HelloWorld from '../bundles/HelloWorld/components/HelloWorld';
+ReactOnRails.registerStore({
+  appStore: (initialState) => createStore(initialState)
+})
 
-// This is how react_on_rails can see the HelloWorld in the browser.
 ReactOnRails.register({
-  HelloWorld,
-});
+  App
+})
