@@ -1,5 +1,7 @@
 {
   "name": "react-on-rails-server-state",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "react-on-rails": "11.0.9"
+  }
 }
